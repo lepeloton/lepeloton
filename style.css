@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Open Sans;
+}
+
+header, section  {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+.transition {
+    transition: all 0.3s
+}
+
+.transition-slow {
+    transition: all 1s
+}
+
+#texty {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.hero-video {
+    position: fixed;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#logo-frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 100px;
+    opacity: 0;
+    transition: opacity 1s, top 0.1s;
+}
+
+.hero-logo {
+    width: 100%;
+    height: 100%;
+}
+
+#fuzzy {
+    background: rgba(255,255,255,1);
+}
+
+#fuzzy-text {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-25%);
+    right: 20px;
+    text-align: right;
+    font-size: 150%;
+}
+
+#fuzzy-image {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-60%, -50%);
+    height: 200px;
+    width: 200px;
+}
+
+#fuzzy-image > img {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#map {
+    background: url(public/map.png) center center #f2f2f2 fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

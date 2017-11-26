@@ -9,26 +9,44 @@ header, section  {
     height: 100vh;
     max-height: 1000px;
     overflow: hidden;
+    z-index: 10;
+    background: #ddd;
+}
+
+video {
+    position: fixed;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 .transition {
-    transition: all 0.3s
+    transition: all 0.3s ease-in-out;
 }
 
 .transition-slow {
-    transition: all 1s
+    transition: all 1s ease-in-out;
 }
 
-#texty {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+.transition-very-slow {
+    transition: all 3s ease-in-out;
 }
 
-.hero-video {
-    position: fixed;
-    min-height: 100%;
-    min-width: 100%;
+#landing {
+    background: #fff;
+    z-index: 5;
+}
+
+#food {
+    z-index: 4;
+}
+
+#hero-video {
+    opacity: 0;
 }
 
 #logo-frame {
@@ -41,7 +59,7 @@ header, section  {
     background: rgba(255,255,255,0.5);
     border-radius: 100px;
     opacity: 0;
-    transition: opacity 1s, top 0.1s;
+    transition: opacity 1s ease-in-out;
 }
 
 .hero-logo {
@@ -50,13 +68,41 @@ header, section  {
 }
 
 #fuzzy {
-    background: rgba(255,255,255,1);
+    min-height: 400vh;
+    background: #7C5852;
+
 }
 
-#fuzzy-text {
+#pop-block {
     position: absolute;
-    bottom: 0;
-    transform: translateY(-25%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: #036;
+}
+
+.pop-blocks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+}
+
+#pop-block-1 {
+    background: #000
+}
+
+#pop-block-2 {
+    background: #fff
+}
+
+/*#fuzzy-text {
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
     right: 20px;
     text-align: right;
     font-size: 150%;
@@ -66,18 +112,52 @@ header, section  {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translate(-60%, -50%);
+    transform: translate(-100%, -50%);
     height: 200px;
     width: 200px;
-}
+}*/
 
 #fuzzy-image > img {
     min-height: 100%;
     min-width: 100%;
 }
 
+#secondary-video {
+
+}
+
 #map {
     background: url(public/map.png) center center #f2f2f2 fixed;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#map-link {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 75px;
+    opacity: 0;
+}
+
+#gallery {
+    height: auto;
+}
+
+.gallery-image {
+    width: 25%;
+    float: left;
+    opacity: 0;
+}
+
+.gallery-hero {
+    width: 75%;
+}
+
+#riders {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
 }

@@ -9,46 +9,59 @@
 </head>
 <body>
     <header id="landing">
-        <video class="hero-video" src="public/art.mp4" type="video/mp4" autoplay loop muted></video>
+        <video id="hero-video" class="transition-very-slow" src="public/art.mp4" type="video/mp4" autoplay loop muted></video>
         <div id="logo-frame" >
             <img class="hero-logo" src="public/logo.png">
         </div>
     </header>
     <section id="fuzzy">
-        <div id="fuzzy-text" class="transition">
-            <h1>Specialty coffee in Paris</h1>
-            <p>Chilled out café</p>
-            <p>Waffles n Bacon</p>
-            <p>Other awesome keywords</p>
+        <div id="pop-block" class="">
+            <div id="pop-block-1" class="pop-blocks transition-slow">
+                
+            </div>
+            <div id="pop-block-2" class="pop-blocks transition-slow">
+                
+            </div>
         </div>
-        <div id="fuzzy-image" class="transition">
-            <img src="public/rider.png">
-        </div>
+    </section>
+    <section id="food">
+        <!-- <div id="riders">
+            <img src="public/riders.png">
+        </div> -->
+        <video id="secondary-video" src="public/food.mp4" type="video/mp4" autoplay loop muted></video>
     </section>
     <section id="map">
-        <div>
-            
-        </div>
+        <a href="https://goo.gl/maps/FDqqwgUciT82"><img id="map-link" class="transition" src="public/map-link.jpg"></a>
     </section>
     <section id="gallery">
-        <div>
-            I'm a gallery
-        </div>
-    </section>
-    <section id="menu">
-        <div>
-            I'm a menu
-        </div>
-    </section>
-    <section id="bigups">
-        <div>
-            I'm a bigups
-        </div>
+        <img class="gallery-image transition-slow" src="public/gallery-3.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-4.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-1.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-2.jpg">
+        <img class="gallery-image gallery-hero transition-slow" src="public/gallery-1.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-2.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-3.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-4.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-1.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-2.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-3.jpg">
+        <img class="gallery-image transition-slow" src="public/gallery-4.jpg">
     </section>
     <footer>
         I'm a footer
     </footer>
 
+   <!--  <script type="text/javascript" src="vendor/instafeed.js"></script> -->
     <script src="main.js"></script>
+
+    <!-- <script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'awesome',
+            clientId: '4d4a2a28250346e5b7b4d3b4bd583dbb'
+        });
+        feed.run();
+    </script> -->
+      
 </body>
 </html>

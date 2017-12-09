@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Open Sans;
+    font-size: 48px;
 }
 
 header, section  {
@@ -68,36 +69,54 @@ video {
 }
 
 #fuzzy {
-    min-height: 400vh;
-    background: #7C5852;
+    background: rgba(255,255,255,0.5);
+    height: auto;
 
 }
 
 #pop-block {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: #036;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .pop-blocks {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 0px;
     height: 0px;
+    background: rgba(219,196,171, 0.8);
+    overflow: hidden;
+    text-align: center;
+    line-height: 100%;
+    border-radius: 30px;
+    transition: all 0.5s ease-in-out;
 }
 
-#pop-block-1 {
-    background: #000
+.pop-blocks > img {
+    width: 60px;
+    align-self: center;
 }
 
-#pop-block-2 {
-    background: #fff
+.pop-blocks > span {
+    display: block;
+    align-self: center;
+    width: 150px;
+    font-size: 50%;
 }
+
+footer {
+    position: relative;
+    z-index: 10;
+    background: #eee;
+}
+
 
 /*#fuzzy-text {
     position: absolute;
@@ -123,7 +142,19 @@ video {
 }
 
 #secondary-video {
+    opacity: 0;
+}
 
+#food > span {
+    position: relative;
+    z-index: 1;
+    color: #000;
+    font-size: 50%;
+    text-align: center;
+    width: 100%;
+    display: block;
+    background: rgba(255,255,255,0.7);
+    margin: 50% 0;
 }
 
 #map {

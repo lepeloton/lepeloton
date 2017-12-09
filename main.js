@@ -11,11 +11,14 @@
 
     // declare elements
     var heroVideo = document.getElementById('hero-video');
+    var secondaryVideo = document.getElementById('secondary-video');
     var logoFrame = document.getElementById('logo-frame');
     var fuzzy = document.getElementById('fuzzy');
     var popBlock = document.getElementById('pop-block');
+    var popBlocks = document.getElementsByClassName('pop-blocks');
     var popBlock1 = document.getElementById('pop-block-1');
     var popBlock2 = document.getElementById('pop-block-2');
+    var popBlock3 = document.getElementById('pop-block-3');
 
     // var fuzzyText = document.getElementById('fuzzy-text')
     // var fuzzyImage = document.getElementById('fuzzy-image')
@@ -25,7 +28,7 @@
     var gallery = document.getElementById('gallery')
     var galleryImage = document.getElementsByClassName('gallery-image')
     // var riders = document.getElementById('riders')
-
+    console.log('popBlocks', popBlocks)
 
     // On Load
     window.onload = function() {
@@ -35,6 +38,10 @@
         setTimeout(function() {
             heroVideo.style.opacity = 1
         }, 1000)
+
+        setTimeout(function() {
+            secondaryVideo.style.opacity = 1
+        }, 5000)
 
     }
 
@@ -48,11 +55,16 @@
     // feed.run();
 
     timeout = function(i) {
-        console.log('i', i)
         setTimeout(function() {
-            console.log('i2', i)
             galleryImage[i].style.opacity = 1
         }, 300 * i) 
+    }
+
+    timeout2 = function(i) {
+        setTimeout(function() {
+            popBlocks[i].style.height = 150 + 'px'
+            popBlocks[i].style.width = 150 + 'px'
+        }, 500 * i) 
     }
 
 
@@ -76,10 +88,10 @@
         // }
 
         // Food video to top
-        if (scroll > food.offsetTop - windowHeight) {
-            food.style.zIndex = 6
+        if (scroll > food.offsetTop - windowHeight * 0.75) {
+            heroVideo.style.opacity = 0
         } else {
-            food.style.zIndex = 4
+            heroVideo.style.opacity = 1
         }
 
         // map to top
@@ -109,26 +121,46 @@
         //     riders.style.bottom = trans + 'px'
         // }
 
-        // move popblock with scroll
-        if (scroll > fuzzy.offsetTop - windowHeight / 2) {
-            popBlock.style.top = scroll - fuzzy.offsetTop + windowHeight / 2 + "px";
-        }
+        // fade in popbox
+        // if (scroll > fuzzy.offsetHeight - windowHeight / 2) {
+        //     popBlock.style.opacity = 1;
+        //     // popBlock.style.bottom = (scroll - popBlock.offsetHeight) / 3.5 + 'px'
+        // } 
+        // else {
+        //     popBlock.style.opacity = 0;
+        // }
 
-        // control popins
-        if (scroll > fuzzy.offsetTop - windowHeight / 2 && scroll < fuzzy.offsetTop + windowHeight / 2) {
-            setTimeout(function() {
-                popBlock1.style.height = 100 + "%";
-                popBlock1.style.width = 100 + "%";
-            }, 300)
-            popBlock2.style.height = 0 + "px";
-            popBlock2.style.width = 0 + "px";
-        } else if (scroll > fuzzy.offsetTop + windowHeight / 2 && scroll < fuzzy.offsetTop + windowHeight) {
-            setTimeout(function() {
-                popBlock2.style.height = 100 + "%";
-                popBlock2.style.width = 100 + "%";
-            }, 300)
-            popBlock1.style.height = 0 + "px";
-            popBlock1.style.width = 0 + "px";
+        // // control popins
+        // if (scroll > fuzzy.offsetTop - windowHeight / 2 && scroll < fuzzy.offsetTop + windowHeight / 2) {
+        //         popBlock1.style.height = 100 + "%";
+        //         popBlock1.style.width = 100 + "%";
+        //     popBlock2.style.height = 0 + "px";
+        //     popBlock2.style.width = 0 + "px";
+        //     popBlock3.style.height = 0 + "px";
+        //     popBlock3.style.width = 0 + "px";
+        // } else if (scroll > fuzzy.offsetTop + windowHeight / 2 && scroll < fuzzy.offsetTop + 3 * windowHeight / 2) {
+        //         popBlock2.style.height = 100 + "%";
+        //         popBlock2.style.width = 100 + "%";
+        //     popBlock1.style.height = 0 + "px";
+        //     popBlock1.style.width = 0 + "px";
+        //     popBlock3.style.height = 0 + "px";
+        //     popBlock3.style.width = 0 + "px";
+        // } else if (scroll > fuzzy.offsetTop + 3 * windowHeight / 2 && scroll < fuzzy.offsetTop + 5 * windowHeight / 2) {
+        //         popBlock3.style.height = 100 + "%";
+        //         popBlock3.style.width = 100 + "%";
+        //     popBlock1.style.height = 0 + "px";
+        //     popBlock1.style.width = 0 + "px";
+        //     popBlock2.style.height = 0 + "px";
+        //     popBlock2.style.width = 0 + "px";
+        // }
+
+        // pop fuzzy boxes
+
+        console.log('scroll', scroll - (fuzzy.offsetTop - windowHeight / 2), "pop", popBlocks[0].offsetHeight)
+        if (scroll > fuzzy.offsetTop - windowHeight / 2 && popBlocks[0].offsetHeight === 0) {
+            for (var i = 0; i < popBlocks.length; i++) {
+                timeout2(i)
+            }
         }
     }
 }());

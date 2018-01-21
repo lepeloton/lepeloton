@@ -50,29 +50,25 @@ console.log('FRAMES', frames)
     window.onload = function() {
 
         // create scrolling parameters
-        canScroll = true;
         windowLoaded = true;
 
         // fade in opacity
         logoFrame.style.opacity = 1
         // fade in video
         setTimeout(function() {
-            heroVideo.style.opacity = 1
+            heroVideo.style.opacity = 1;
         }, 1000)
 
         setTimeout(function() {
-            secondaryVideo.style.opacity = 1
-        }, 5000)
+            canScroll = true;
+        }, 2000)
 
     }
 
     var update = function () {
-console.log('FRAME', frame)
         canScroll = false
-console.log('CANSCROLLF', canScroll)
         setTimeout(function() {
                 canScroll = true
-console.log('CANSCROLLT', canScroll)
             }, 2000)
 
         var transition = ''
@@ -86,6 +82,8 @@ console.log('CANSCROLLT', canScroll)
         }
 
         frames[frame - 1].classList.add('active', transition)
+        frames[frame - 1].classList.remove('above', 'below')
+
         frames[prevFrame - 1].classList.remove('active', 'up', 'down')
         frames[prevFrame - 1].classList.add(prevFramePosition)
     }
@@ -96,12 +94,9 @@ console.log('CANSCROLLT', canScroll)
 
 
     function scrollHandler(e) {
-
-console.log(e)
         if(windowLoaded && canScroll === true) {
 
             if (e.touches) {
-// console.log('FIRING 1')
                 var newFinger = e.touches[0].screenY
                 if(newFinger - lastFinger < -50 || newFinger - lastFinger > 50) {
                     // if the last finger position and the new finger position are widely separated, it means a new swipe from the user, therefore reset the olfFinger to newFinger to "start again"
@@ -110,14 +105,11 @@ console.log(e)
                 setTimeout(function() {
                     oldFinger = newFinger
                 }, 500)
-console.log(oldFinger, newFinger, oldFinger - newFinger)
                 if (oldFinger && newFinger - oldFinger <= -50) {
-// console.log('FIRING 2')
                     prevFrame = frame
                     frame ++
                     update()
                 } else if (newFinger - oldFinger >= 50 && frame != 1) {
-// console.log('FIRING 3')
                     prevFrame = frame
                     frame --
                     update()

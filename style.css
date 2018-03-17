@@ -97,7 +97,8 @@ video {
     transform: translate(-50%, -50%);
     height: 200px;
     width: 200px;
-    background: rgba(255,255,255,0.5);
+    /*background: rgba(255,255,255,0.5);*/
+    background: #000;
     border-radius: 100px;
     opacity: 0;
     transition: opacity 1s ease-in-out;

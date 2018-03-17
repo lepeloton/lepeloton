@@ -105,25 +105,31 @@ console.log('FRAMES', frames)
                 setTimeout(function() {
                     oldFinger = newFinger
                 }, 500)
-                if (oldFinger && newFinger - oldFinger <= -50) {
+                if (oldFinger && newFinger - oldFinger <= -50 && frame < frames.length) {
                     prevFrame = frame
                     frame ++
+console.log('FRAME', frame)
                     update()
-                } else if (newFinger - oldFinger >= 50 && frame != 1) {
+                } else if (newFinger - oldFinger >= 50 && frame > 1) {
                     prevFrame = frame
                     frame --
+console.log('FRAME', frame)
                     update()
                 }
                 lastFinger = newFinger
 
             } else if (e.deltaY) {
                 prevFrame = frame
-                if (e.deltaY > 0) {
+                if (e.deltaY > 0 && frame < frames.length) {
                     frame ++
-                } else if (frame != 1) {
+console.log('FRAMEY', frame)
+                    update()
+                } else if (e.deltaY < 0 && frame > 1) {
                     frame --
+console.log('FRAMEY', frame)
+                    update()
                 }
-                update()              
+                              
             }
         }
 

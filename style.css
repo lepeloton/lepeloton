@@ -1,6 +1,8 @@
 html, body {
-    position: fixed;
-    overflow: hidden;
+    overscroll-behaviour: contain;
+/*    position: fixed;
+    overflow: hidden;*/
+    box-sizing: border-box;
 }
 
 html {
@@ -104,7 +106,7 @@ video {
     height: 200px;
     width: 200px;
     /*background: rgba(255,255,255,0.5);*/
-    background: #fc0;
+    background: #dec;
     border-radius: 100px;
     opacity: 0;
     transition: opacity 1s ease-in-out;

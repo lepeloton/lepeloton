@@ -46,7 +46,7 @@ video {
     width: 20px;
     border-radius: 50%;
     background: #ffffff90;
-    margin: 25px;
+    margin: 10px 0;
     transition: background 1s ease-in-out;
 }
 
@@ -162,6 +162,8 @@ video {
     border-radius: 50%;
     transition: all 0.5s ease-in-out;
     transition-delay: 1s;
+    max-width: 33vh;
+    max-height: 33vh;
 
     display: -webkit-box; 
     display: -moz-box;
@@ -173,8 +175,7 @@ video {
 .active .pop-blocks {
     width: 50vw;
     height: 50vw;
-    max-width: 33vh;
-    max-height: 33vh;
+
 }
 
 .pop-blocks > img {

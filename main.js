@@ -10,6 +10,7 @@
 
 
     // declare elements
+    var location = document.getElementsByClassName('location')
     var heroVideo = document.getElementById('hero-video');
     var secondaryVideo = document.getElementById('secondary-video');
     var logoFrame = document.getElementById('logo-frame');
@@ -60,9 +61,9 @@
 
         setTimeout(function() {
             canScroll = true;
-        }, 2000)
+        }, 1000)
 
-        heroVideo.playbackRate = 0.4;
+        heroVideo.playbackRate = 0.8;
 
     }
 
@@ -70,7 +71,7 @@
         canScroll = false
         setTimeout(function() {
                 canScroll = true
-            }, 2000)
+            }, 1000)
 
         var transition = ''
         var prevFramePosition = ''
@@ -81,6 +82,9 @@
             transition = 'down'
             prevFramePosition = 'below'
         }
+
+        location[frame - 1].classList.add('active')
+        location[prevFrame - 1].classList.remove('active')
 
         frames[frame - 1].classList.add('active', transition)
         frames[frame - 1].classList.remove('above', 'below')

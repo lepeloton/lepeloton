@@ -147,6 +147,12 @@ video {
     display: -webkit-flex;
 }
 
+@media only screen and (min-width: 800px) {
+    #pop-block {
+        flex-direction: row;
+    } 
+}
+
 .pop-blocks {
     display: flex;
     flex-direction: column;
@@ -208,7 +214,8 @@ footer {
     width: 100%;
     display: block;
     background: rgba(255,255,255,0.7);
-    margin: 50% 0;
+    top: 50%;
+    transform: translateY(-50%);
     line-height: 300%;
 }
 

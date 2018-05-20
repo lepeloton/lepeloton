@@ -28,6 +28,7 @@
     var mapLink = document.getElementById('map-link')
     var gallery = document.getElementById('gallery')
     var galleryImage = document.getElementsByClassName('gallery-image')
+    var footerLogo = document.getElementById('footer-logo');
     // var riders = document.getElementById('riders')
 
 
@@ -110,6 +111,10 @@
             Array.from(galleryImage).forEach(function(image, i) {
                 image.classList.remove('shown')
             })
+        }
+
+        if(frame === 7) {
+            footerLogo.style.opacity = 1;
         }
     }
 

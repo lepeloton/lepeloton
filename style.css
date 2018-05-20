@@ -197,7 +197,7 @@ video {
 
 footer {
     z-index: 10;
-    background: #eee;
+    background: #000;
 }
 
 #fuzzy-image > img {
@@ -249,4 +249,37 @@ footer {
 
 .gallery-hero {
     width: 75%;
+}
+
+.footer-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vh;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content i {
+    font-size: 250%;
+    margin: 20px;
+}
+
+#footer-logo {
+    height: 50vw;
+    width: 50vw;
+    max-height: 400px;
+    max-width: 400px;
+    background: #ffffff90;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin: 0 auto;
 }

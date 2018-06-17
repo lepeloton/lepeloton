@@ -60,8 +60,10 @@ video {
 
 .frames.active {
     top: 0;
-    display: block;
+    display: flex;
     position: fixed;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .frames.above {

@@ -60,10 +60,8 @@ video {
 
 .frames.active {
     top: 0;
-    display: flex;
+    display: block;
     position: fixed;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .frames.above {
@@ -241,6 +239,9 @@ footer {
 
 #gallery {
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .gallery-image {

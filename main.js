@@ -162,3 +162,15 @@
         }
     }
 }());
+
+
+function toggleBlock(nextBlock) {
+    var blocks = document.getElementsByClassName('pop-blocks');
+
+    for (let i = 0; i < blocks.length; i++) {
+        const block = blocks[i];
+        block.classList.remove('shown')
+    }
+
+    blocks[nextBlock].classList.add('shown')
+}

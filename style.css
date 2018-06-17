@@ -181,7 +181,7 @@ video {
 }
 
 .pop-blocks span {
-    font-size: 50%;
+    font-size: 4vh;
 }
 
 .active .pop-blocks.shown {

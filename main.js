@@ -93,6 +93,16 @@
         frames[prevFrame - 1].classList.remove('active', 'up', 'down')
         frames[prevFrame - 1].classList.add(prevFramePosition)
 
+        if(frame === 2) {
+            for (let i = 0; i < popBlocks.length; i++) {
+                const block = popBlocks[i];
+                block.classList.remove('shown')
+            }
+            setTimeout(function() {
+                popBlock1.classList.add('shown')
+            }, 2000)
+        }
+
         if(frame === 3) {
             heroVideo.style.opacity = 0;
         } else if (heroVideo.style.opacity !== 1) {

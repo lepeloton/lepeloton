@@ -13,6 +13,7 @@
     var location = document.getElementsByClassName('location')
     var heroVideo = document.getElementById('hero-video');
     var secondaryVideo = document.getElementById('secondary-video');
+    var tertiaryVideo = document.getElementById('tertiary-video');
     var logoFrame = document.getElementById('logo-frame');
     var fuzzy = document.getElementById('fuzzy');
     var popBlock = document.getElementById('pop-block');
@@ -100,11 +101,15 @@
             }
             setTimeout(function() {
                 popBlock1.classList.add('shown')
-            }, 2000)
+            }, 750)
         }
 
-        if(frame === 3) {
+        if(frame === 3 || frame === 6) {
             heroVideo.style.opacity = 0;
+            // if(frame === 6) {
+            //     tertiaryVideo.opacity = 1;
+            //     tertiaryVideo.style.zIndex = "1";
+            // }
         } else if (heroVideo.style.opacity !== 1) {
             heroVideo.style.opacity = 1;
         }

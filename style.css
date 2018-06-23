@@ -167,6 +167,7 @@ video {
     border-radius: 10px;
     transition: max-width 0.5s ease-in-out, height 0.5s ease-in-out, flex-grow 0.5s ease-in-out;
     transition-delay: 0s;
+    cursor: pointer;
 }
 
 .content {
@@ -188,6 +189,7 @@ video {
     width: 100%;
     max-width: 500px;
     flex-grow: 1;
+    cursor: default;
 }
 
 .active .pop-blocks.shown span {

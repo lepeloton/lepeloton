@@ -135,7 +135,7 @@
 
     // Scroll Section
     document.addEventListener("wheel", scrollHandler);
-    document.addEventListener("touchmove", scrollHandler, false)
+    document.addEventListener("touchmove", scrollHandler, {passive: false})
 
 
     function scrollHandler(e) {

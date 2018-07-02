@@ -65,9 +65,21 @@
             canScroll = true;
         }, 1000)
 
-        heroVideo.playbackRate = 0.8;
+        heroVideo.playbackRate = "0.5";
+        tertiaryVideo.playbackRate = "0.5";
 
     }
+
+//     heroVideo.onended = function () {
+// console.log('FIRING ONE');
+//         if (heroVideo.playbackRate == "0.5") {
+
+//             heroVideo.playbackRate = "-0.5";
+//         } else {
+//             heroVideo.playbackRate == "0.5"
+//         }
+        
+//     }
 
     var update = function () {
         canScroll = false

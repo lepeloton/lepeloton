@@ -1,36 +1,13 @@
 (function() {
 
-    // get window heights and widths
-    var w=window,
-        d=document,
-        e=d.documentElement,
-        g=d.getElementsByTagName('body')[0],
-        windowWidth=w.innerWidth||e.clientWidth||g.clientWidth,
-        windowHeight=w.innerHeight||e.clientHeight||g.clientHeight;
-
-
     // declare elements
     var location = document.getElementsByClassName('location')
     var heroVideo = document.getElementById('hero-video');
-    var secondaryVideo = document.getElementById('secondary-video');
     var tertiaryVideo = document.getElementById('tertiary-video');
     var logoFrame = document.getElementById('logo-frame');
-    var fuzzy = document.getElementById('fuzzy');
-    var popBlock = document.getElementById('pop-block');
     var popBlocks = document.getElementsByClassName('pop-blocks');
     var popBlock1 = document.getElementById('pop-block-1');
-    var popBlock2 = document.getElementById('pop-block-2');
-    var popBlock3 = document.getElementById('pop-block-3');
-
-    // var fuzzyText = document.getElementById('fuzzy-text')
-    // var fuzzyImage = document.getElementById('fuzzy-image')
-    var food = document.getElementById('food')
-    var map = document.getElementById('map')
-    var mapLink = document.getElementById('map-link')
-    var gallery = document.getElementById('gallery')
-    var galleryImage = document.getElementsByClassName('gallery-image')
     var footerLogo = document.getElementById('footer-logo');
-    // var riders = document.getElementById('riders')
 
 
 
@@ -42,8 +19,6 @@
     var canScroll = false;
     var frame = 1;
     var prevFrame = 1;
-    var scroll = 0;
-    var updateNeeded = false;
 
     var oldFinger = 0
     var lastFinger = 0
@@ -69,17 +44,6 @@
         tertiaryVideo.playbackRate = "0.5";
 
     }
-
-//     heroVideo.onended = function () {
-// console.log('FIRING ONE');
-//         if (heroVideo.playbackRate == "0.5") {
-
-//             heroVideo.playbackRate = "-0.5";
-//         } else {
-//             heroVideo.playbackRate == "0.5"
-//         }
-        
-//     }
 
     var update = function () {
         canScroll = false
@@ -118,10 +82,6 @@
 
         if(frame === 3 || frame === 5) {
             heroVideo.style.opacity = 0;
-            // if(frame === 6) {
-            //     tertiaryVideo.opacity = 1;
-            //     tertiaryVideo.style.zIndex = "1";
-            // }
         } else if (heroVideo.style.opacity !== 0.7) {
             heroVideo.style.opacity = 0.7;
         }

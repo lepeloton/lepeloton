@@ -58,7 +58,7 @@
         logoFrame.style.opacity = 1
         // fade in video
         setTimeout(function() {
-            heroVideo.style.opacity = 1;
+            heroVideo.style.opacity = 0.7;
         }, 1000)
 
         setTimeout(function() {
@@ -116,31 +116,33 @@
             }, 750)
         }
 
-        if(frame === 3 || frame === 6) {
+        if(frame === 3 || frame === 5) {
             heroVideo.style.opacity = 0;
             // if(frame === 6) {
             //     tertiaryVideo.opacity = 1;
             //     tertiaryVideo.style.zIndex = "1";
             // }
-        } else if (heroVideo.style.opacity !== 1) {
-            heroVideo.style.opacity = 1;
+        } else if (heroVideo.style.opacity !== 0.7) {
+            heroVideo.style.opacity = 0.7;
         }
 
-        if(frame === 5) {
-            Array.from(galleryImage).forEach(function(image, i) {
-                setTimeout(function() {
-                    image.classList.add('shown')
-                }, 300 * i)
-            })
-        }
+        // var timeout
 
-        if(frame !== 5 && galleryImage[0].classList.contains('shown') > 0) {
-            Array.from(galleryImage).forEach(function(image, i) {
-                image.classList.remove('shown')
-            })
-        }
+        // if(frame === 5) {
+        //     Array.from(galleryImage).forEach(function(image, i) {
+        //         timeout = setTimeout(function() {
+        //             image.classList.add('shown')
+        //         }, 300 * i)
+        //     })
+        // }
 
-        if(frame === 7) {
+        // if(frame !== 5 && galleryImage[0].classList.contains('shown') > 0) {
+        //     Array.from(galleryImage).forEach(function(image, i) {
+        //         image.classList.remove('shown')
+        //     })
+        // }
+
+        if(frame === 6) {
             footerLogo.style.opacity = 1;
         }
     }

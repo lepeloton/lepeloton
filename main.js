@@ -132,6 +132,8 @@
                     prevFrame = frame
                     frame --
                     update()
+                } else {
+                    e.preventDefault();
                 }
                 lastFinger = newFinger
 

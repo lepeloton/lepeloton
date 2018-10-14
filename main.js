@@ -111,12 +111,7 @@
 
 
     function scrollHandler(e) {
-        e.preventDefault();
-        if(!addressBarsRemoved) {
-            console.log('SCROLLING')
-            window.scroll(0, 100)
-            addressBarsRemoved = true;
-        }
+        // e.preventDefault();
         if(windowLoaded && canScroll === true) {
 
             if (e.touches) {
@@ -133,6 +128,7 @@
                     frame ++
                     update()
                 } else if (newFinger - oldFinger >= 50 && frame > 1) {
+                    e.preventDefault();
                     prevFrame = frame
                     frame --
                     update()
@@ -140,6 +136,7 @@
                 lastFinger = newFinger
 
             } else if (e.deltaY) {
+                e.preventDefault();
                 prevFrame = frame
                 if (e.deltaY > 0 && frame < frames.length) {
                     frame ++

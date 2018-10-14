@@ -132,7 +132,7 @@
                     prevFrame = frame
                     frame --
                     update()
-                } else {
+                } else if (newFinger - oldFinger >= 0) {
                     e.preventDefault();
                 }
                 lastFinger = newFinger

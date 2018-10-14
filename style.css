@@ -1,6 +1,7 @@
 html, body {
     box-sizing: border-box;
     font-family: open-sans;
+    height: 101%;
 }
 
 body {
@@ -221,12 +222,15 @@ video {
 }
 
 .active .pop-blocks.shown span {
-    position: relative;
+    /* position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
 }
 
 .pop-blocks span {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
     padding: 50px;
     font-size: 4vh;

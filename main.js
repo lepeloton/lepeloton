@@ -8,13 +8,11 @@
     var popBlocks = document.getElementsByClassName('pop-blocks');
     var popBlock1 = document.getElementById('pop-block-1');
     var footerLogo = document.getElementById('footer-logo');
-
-
-
-
+    
     var frames = document.getElementsByClassName('frames');
 
     // SCROLLING VARIABLES
+    var addressBarsRemoved = false;
     var windowLoaded = false;
     var canScroll = false;
     var frame = 1;
@@ -114,7 +112,11 @@
 
     function scrollHandler(e) {
         e.preventDefault();
-
+        if(!addressBarsRemoved) {
+            console.log('SCROLLING')
+            window.scroll(0, 100)
+            addressBarsRemoved = true;
+        }
         if(windowLoaded && canScroll === true) {
 
             if (e.touches) {

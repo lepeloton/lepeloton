@@ -111,7 +111,11 @@
 
 
     function scrollHandler(e) {
-        e.preventDefault();
+        if(frame !== 1) {
+            e.preventDefault();
+console.log('PREVENTING DEFAULT')
+        }
+        
         if(windowLoaded && canScroll === true) {
 
             if (e.touches) {

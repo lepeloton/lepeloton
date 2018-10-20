@@ -1,7 +1,7 @@
 html, body {
     box-sizing: border-box;
     font-family: open-sans;
-    height: 200%;
+    height: 100%;
 }
 
 body {
@@ -17,9 +17,9 @@ a {
 header, section, footer {
     display: block;
     position: fixed;
-    top: 101vh;
+    top: 100vh;
     width: 100%;
-    height: 101vh;
+    height: 100vh;
     overflow: visible;
     z-index: 10;
     background: #ddd;
@@ -82,7 +82,7 @@ video {
 }
 
 .frames.below {
-    top: 101vh;
+    top: 100vh;
 }
 
 .transition {
@@ -158,7 +158,7 @@ video {
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    min-height: 101vh;
+    min-height: 100vh;
 
     display: -webkit-box; 
     display: -moz-box;

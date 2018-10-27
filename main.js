@@ -11,6 +11,8 @@
     
     var frames = document.getElementsByClassName('frames');
 
+    var fullscreen = false
+
     // SCROLLING VARIABLES
     var addressBarsRemoved = false;
     var windowLoaded = false;
@@ -46,8 +48,8 @@
     var update = function () {
         canScroll = false
         setTimeout(function() {
-                canScroll = true
-            }, 1000)
+            canScroll = true
+        }, 1000)
 
         var transition = ''
         var prevFramePosition = ''
@@ -111,43 +113,49 @@
 
 
     function scrollHandler(e) {
-        if(frame !== 1) {
+        if(!fullscreen && window.scrollY > 0) {
+            canScroll = false
+            fullscreen = true
+            prevFrame = frame
+            frame ++
+console.log('FIRING ONE')
+            update()
+        } else if(fullscreen) {
             e.preventDefault();
-console.log('PREVENTING DEFAULT')
-        }
-        
-        if(windowLoaded && canScroll === true) {
 
-            if (e.touches) {
-                var newFinger = e.touches[0].screenY
-                if(newFinger - lastFinger < -50 || newFinger - lastFinger > 50) {
-                    // if the last finger position and the new finger position are widely separated, it means a new swipe from the user, therefore reset the olfFinger to newFinger to "start again"
-                    oldFinger = newFinger
-                }
-                setTimeout(function() {
-                    oldFinger = newFinger
-                }, 500)
-                if (oldFinger && newFinger - oldFinger <= -50 && frame < frames.length) {
+            if(windowLoaded && canScroll === true) {
+console.log('FIRING TWO')
+                if (e.touches) {
+                    var newFinger = e.touches[0].screenY
+                    if(newFinger - lastFinger < -50 || newFinger - lastFinger > 50) {
+                        // if the last finger position and the new finger position are widely separated, it means a new swipe from the user, therefore reset the olfFinger to newFinger to "start again"
+                        oldFinger = newFinger
+                    }
+                    setTimeout(function() {
+                        oldFinger = newFinger
+                    }, 500)
+                    if (oldFinger && newFinger - oldFinger <= -50 && frame < frames.length) {
+                        prevFrame = frame
+                        frame ++
+                        update()
+                    } else if (newFinger - oldFinger >= 50 && frame > 1) {
+                        prevFrame = frame
+                        frame --
+                        update()
+                    }
+                    lastFinger = newFinger
+    
+                } else if (e.deltaY) {
                     prevFrame = frame
-                    frame ++
-                    update()
-                } else if (newFinger - oldFinger >= 50 && frame > 1) {
-                    prevFrame = frame
-                    frame --
-                    update()
+                    if (e.deltaY > 0 && frame < frames.length) {
+                        frame ++
+                        update()
+                    } else if (e.deltaY < 0 && frame > 1) {
+                        frame --
+                        update()
+                    }
+                                  
                 }
-                lastFinger = newFinger
-
-            } else if (e.deltaY) {
-                prevFrame = frame
-                if (e.deltaY > 0 && frame < frames.length) {
-                    frame ++
-                    update()
-                } else if (e.deltaY < 0 && frame > 1) {
-                    frame --
-                    update()
-                }
-                              
             }
         }
     }

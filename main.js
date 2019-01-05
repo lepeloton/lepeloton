@@ -2,6 +2,7 @@
 
     // declare elements
     var location = document.getElementsByClassName('location')
+    var position = document.getElementById('position')
     var heroVideo = document.getElementById('hero-video');
     var tertiaryVideo = document.getElementById('tertiary-video');
     var logoFrame = document.getElementById('logo-frame');
@@ -86,24 +87,12 @@
             heroVideo.style.opacity = 0.7;
         }
 
-        // var timeout
-
-        // if(frame === 5) {
-        //     Array.from(galleryImage).forEach(function(image, i) {
-        //         timeout = setTimeout(function() {
-        //             image.classList.add('shown')
-        //         }, 300 * i)
-        //     })
-        // }
-
-        // if(frame !== 5 && galleryImage[0].classList.contains('shown') > 0) {
-        //     Array.from(galleryImage).forEach(function(image, i) {
-        //         image.classList.remove('shown')
-        //     })
-        // }
-
         if(frame === 6) {
             footerLogo.style.opacity = 1;
+        }
+
+        if(frame !== 1) {
+            position.style.opacity = 1;
         }
     }
 

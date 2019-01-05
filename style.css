@@ -49,13 +49,14 @@ video {
     text-align: right;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    color: #fff;
 }
 
 #position span {
     position: relative;
     left: 25px;
     top: -6px;
-    color: #fff;
+    cursor: pointer;
 }
 
 #position .active span {

@@ -94,6 +94,11 @@
         if(frame !== 1) {
             position.style.opacity = 1;
         }
+        if(frame === 2 || frame === 4) {
+            position.style.color = '#000';
+        } else {
+            position.style.color = '#fff';
+        }
     }
 
     // Scroll Section

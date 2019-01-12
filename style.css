@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "DinCond-Bold";
+    src: url(http://www.bikeabouttours.com/lepeloton/fonts/DINCond-Bold.woff) format("truetype");
+}
+
 html, body {
     box-sizing: border-box;
     font-family: open-sans;
@@ -6,7 +11,7 @@ html, body {
 
 body {
     margin: 0;
-    font-family: Open Sans;
+    font-family: 'DinCond-Bold', sans-serif;
     font-size: 48px;
 }
 
@@ -152,6 +157,28 @@ video {
     box-shadow: 0px 0px 10px 2px #0006
 }
 
+#landing-links {
+    position: relative;
+    top: 50%;
+    transform: translateY(200px);
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vh;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#landing-links a {
+    color: #000;
+    text-decoration: none;
+}
+
+#landing-links i {
+    font-size: 250%;
+    margin: 20px;
+}
+
 .hero-logo {
     width: 90%;
     position: absolute;
@@ -233,11 +260,25 @@ video {
     transition: background 1s;
 }
 
+.content a {
+    text-decoration: underline;
+    color: #fff;
+    pointer-events: none;
+}
+
+.shown .content a {
+    pointer-events: initial;
+}
+
 .shown .content {
     background: #0006;
 }
 
-.pop-blocks span {
+.small-text {
+    font-size: 70%;
+}
+
+.pop-blocks .content > span {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -247,6 +288,7 @@ video {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
     transition-delay: 0.4s;
+    text-shadow: 0px 0px 10px #000;
 }
 
 .pop-blocks .fa {
@@ -328,6 +370,7 @@ footer {
     transition: transform 1s 2s;
     transform: scale(0.5);
     max-width: 500px;
+    text-shadow: 0px 0px 10px #000;
 }
 
 #food.active span, #bikes.active span {
@@ -393,9 +436,19 @@ footer {
     text-decoration: none;
 }
 
+.footer-content p {
+    margin-bottom: 50px;
+}
+
 .footer-content i {
     font-size: 250%;
     margin: 20px;
+}
+@media only screen and (max-width: 950px) {
+    .footer-content i {
+        font-size: 165%;
+        margin: 5px;
+    }
 }
 
 #footer-logo {

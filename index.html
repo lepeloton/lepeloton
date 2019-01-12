@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="reset.css">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="prefix-min-styles.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="prefix-min-styles.css"> -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
 <body>
     <ul id="position">
-        <li class="location active"><span onclick="stuff(1)">home</span></a></li>
+        <li class="location active"><span>home</span></li>
         <li class="location"><span>cafe</span></li>
         <li class="location"><span>food</span></li>
         <li class="location"><span>map</span></li>
@@ -25,22 +25,29 @@
         <div id="logo-frame" >
             <img class="hero-logo" src="public/logo.png">
         </div>
+        <div id="landing-links">
+            <a href="https://www.facebook.com/lepelotoncafe/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/lepelotoncafe/" target="_blank"></i><i class="fab fa-instagram"></i></a>
+            <a href="mailto:contact@lepelotoncafe.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
     </header>
     <section id="fuzzy" class="frames">
         <div id="pop-block" class="">
             <div id="pop-block-1" onclick="toggleBlock(0)" class="pop-blocks transition-slow">
                 <div class="content">
-                    <span>Specialty coffee roasted in Paris and prepared by baristas who take their coffee seriously<br>**Coffee roasted by our friends at La Brulerie de Belleville & Coutume**</span>
+                    <span>
+                        Specialty coffee roasted in Paris and prepared by baristas who take their coffee seriously
+                    </span>
                 </div>
             </div>
             <div id="pop-block-2" onclick="toggleBlock(1)" class="pop-blocks transition-slow">
                 <div class="content">
-                    <span>Come for the coffee, stay for the chat</span>
+                    <span>Le Peloton is brought to you by Christian and Paul <a href="http://www.bikeabouttours.com/" target="_blank">(founders of Bike About Tours)</a> to share their passion for great coffee, cycling & community in the heart of Paris</span>
                 </div>
             </div>
             <div id="pop-block-3" onclick="toggleBlock(2)" class="pop-blocks transition-slow">
                 <div class="content">
-                    <span>Le Peloton cafe offers daily bike rentals & tours to help you discover Paris A VELO. We’ll be happy to give you our recommendations on the best routes to explore.</span>
+                    <span>Le Peloton cafe offers <a href="http://www.bikeabouttours.com/" target="_blank">daily bike rentals & tours</a> to help you discover Paris A VELO. We’ll be happy to give you our recommendations on the best routes to explore.</span>
                 </div>
             </div>
         </div>
@@ -69,14 +76,15 @@
                 <img class="hero-logo" src="public/logo.png">
             </div>
             <p><a href="https://goo.gl/maps/kwo3z6ZVAcE2" target="_blank">17 Rue du Pont Louis-Philippe, 75004 Paris</a></p>
-            <p><a href="mailto:contact@lepelotoncafe.com" target="_blank">Drop us a line</a></p>
             <a href="https://www.facebook.com/lepelotoncafe/" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/lepelotoncafe/" target="_blank"></i><i class="fab fa-instagram"></i></a>
+            <a href="mailto:contact@lepelotoncafe.com" target="_blank"><i class="fas fa-envelope"></i></a>
             
         </div>
     </footer>
 
-    <script src="main-min.js"></script>
+    <script src="main.js"></script>
+    <!-- <script src="main-min.js"></script> -->
       
 </body>
 </html>

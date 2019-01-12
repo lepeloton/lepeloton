@@ -6,6 +6,7 @@
     var heroVideo = document.getElementById('hero-video');
     var tertiaryVideo = document.getElementById('tertiary-video');
     var logoFrame = document.getElementById('logo-frame');
+    var landingLinks = document.getElementById('landing-links');
     var popBlocks = document.getElementsByClassName('pop-blocks');
     var popBlock1 = document.getElementById('pop-block-1');
     var footerLogo = document.getElementById('footer-logo');
@@ -26,12 +27,13 @@
 
     // On Load
     window.onload = function() {
-
         // create scrolling parameters
         windowLoaded = true;
-
         // fade in opacity
-        logoFrame.style.opacity = 1
+        logoFrame.style.opacity = 1;
+        setTimeout(function() {
+            landingLinks.style.opacity = 1;            
+        },1000)
         // fade in video
         setTimeout(function() {
             heroVideo.style.opacity = 0.7;
@@ -95,7 +97,7 @@
             position.style.opacity = 1;
         }
         if(frame === 2 || frame === 4) {
-            position.style.color = '#000';
+            position.style.color = '#484848';
         } else {
             position.style.color = '#fff';
         }
@@ -112,13 +114,11 @@
             fullscreen = true
             prevFrame = frame
             frame ++
-console.log('FIRING ONE')
             update()
         } else if(fullscreen) {
             e.preventDefault();
 
             if(windowLoaded && canScroll === true) {
-console.log('FIRING TWO')
                 if (e.touches) {
                     var newFinger = e.touches[0].screenY
                     if(newFinger - lastFinger < -50 || newFinger - lastFinger > 50) {

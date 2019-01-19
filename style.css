@@ -6,8 +6,11 @@ html, body {
 
 body {
     margin: 0;
-    font-family: 'DinCond-Bold', sans-serif;
     font-size: 48px;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 a {

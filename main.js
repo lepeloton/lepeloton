@@ -10,6 +10,7 @@
     var popBlocks = document.getElementsByClassName('pop-blocks');
     var popBlock1 = document.getElementById('pop-block-1');
     var footerLogo = document.getElementById('footer-logo');
+    var arrow = document.getElementById('arrow')
     
     var frames = document.getElementsByClassName('frames');
 
@@ -34,6 +35,9 @@
         setTimeout(function() {
             landingLinks.style.opacity = 1;            
         },1000)
+        setTimeout(function() {
+            arrow.style.opacity = 1;            
+        },2000)
         // fade in video
         setTimeout(function() {
             heroVideo.style.opacity = 0.7;
@@ -45,9 +49,10 @@
 
         heroVideo.playbackRate = "0.5";
         tertiaryVideo.playbackRate = "0.5";
-
     }
 
+
+    // Update
     var update = function () {
         canScroll = false
         setTimeout(function() {
@@ -104,12 +109,15 @@
     }
 
     // Scroll Section
-    document.addEventListener("wheel", scrollHandler);
+
+    arrow.addEventListener('click', scrollHandler)
+    document.addEventListener("wheel", scrollHandler)
     document.addEventListener("touchmove", scrollHandler, {passive: false})
 
 
     function scrollHandler(e) {
-        if(!fullscreen && window.scrollY > 0) {
+        console.log('E', e)
+        if(!fullscreen && window.scrollY > 0 || e.type === 'click') {
             canScroll = false
             fullscreen = true
             prevFrame = frame

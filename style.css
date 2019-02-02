@@ -186,6 +186,15 @@ video {
     transform: translate(-50%, -50%);
 }
 
+#arrow {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 #fuzzy {
     background: rgba(255,255,255,0.5);
     height: auto;

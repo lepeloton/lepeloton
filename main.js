@@ -68,7 +68,6 @@
             transition = 'down'
             prevFramePosition = 'below'
         }
-
         location[frame - 1].classList.add('active')
         location[prevFrame - 1].classList.remove('active')
 
@@ -109,19 +108,39 @@
     }
 
     // Scroll Section
-
+    location[0].addEventListener('click', () => {
+        scrollHandler(1)
+    })
+    location[1].addEventListener('click', () => {
+        scrollHandler(2)
+    })
+    location[2].addEventListener('click', () => {
+        scrollHandler(3)
+    })
+    location[3].addEventListener('click', () => {
+        scrollHandler(4)
+    })
+    location[4].addEventListener('click', () => {
+        scrollHandler(5)
+    })
+    location[5].addEventListener('click', () => {
+        scrollHandler(6)
+    })
     arrow.addEventListener('click', scrollHandler)
     document.addEventListener("wheel", scrollHandler)
     document.addEventListener("touchmove", scrollHandler, {passive: false})
 
 
     function scrollHandler(e) {
-        console.log('E', e)
         if(!fullscreen && window.scrollY > 0 || e.type === 'click') {
             canScroll = false
             fullscreen = true
             prevFrame = frame
             frame ++
+            update()
+        } else if(typeof e === 'number') {
+            prevFrame = frame
+            frame = e
             update()
         } else if(fullscreen) {
             e.preventDefault();

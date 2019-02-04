@@ -17,7 +17,6 @@
     var fullscreen = false
 
     // SCROLLING VARIABLES
-    var addressBarsRemoved = false;
     var windowLoaded = false;
     var canScroll = false;
     var frame = 1;
@@ -26,8 +25,18 @@
     var oldFinger = 0
     var lastFinger = 0
 
-    // On Load
     window.onload = function() {
+        console.log('WINDOW LOADED')
+    }
+    // On Load
+    heroVideo.addEventListener('canplay', () => {
+        console.log('CAN PLAY')
+        if(!windowLoaded) {
+            onCanPlay()
+        }
+    })
+
+    function onCanPlay() {
         // create scrolling parameters
         windowLoaded = true;
         // fade in opacity
@@ -50,7 +59,6 @@
         heroVideo.playbackRate = "0.5";
         tertiaryVideo.playbackRate = "0.5";
     }
-
 
     // Update
     var update = function () {

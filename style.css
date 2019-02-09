@@ -179,7 +179,7 @@ video {
     margin: 20px;
 }
 
-.hero-logo {
+#hero-logo {
     width: 90%;
     position: absolute;
     top: 50%;

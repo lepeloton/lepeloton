@@ -4,6 +4,7 @@
     var location = document.getElementsByClassName('location')
     var position = document.getElementById('position')
     var heroVideo = document.getElementById('hero-video');
+    var heroLogo = document.getElementById('hero-logo');
     var tertiaryVideo = document.getElementById('tertiary-video');
     var logoFrame = document.getElementById('logo-frame');
     var landingLinks = document.getElementById('landing-links');
@@ -25,18 +26,22 @@
     var oldFinger = 0
     var lastFinger = 0
 
-    window.onload = function() {
-        console.log('WINDOW LOADED')
-    }
     // On Load
     heroVideo.addEventListener('canplay', () => {
         console.log('CAN PLAY')
         if(!windowLoaded) {
-            onCanPlay()
+            onLoadEvents()
         }
     })
 
-    function onCanPlay() {
+    window.onload = function() {
+        console.log('WINDOW LOADED')
+        if(!windowLoaded) {
+            onLoadEvents()
+        }
+    }
+
+    function onLoadEvents() {
         // create scrolling parameters
         windowLoaded = true;
         // fade in opacity

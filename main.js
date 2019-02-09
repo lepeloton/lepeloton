@@ -4,7 +4,6 @@
     var location = document.getElementsByClassName('location')
     var position = document.getElementById('position')
     var heroVideo = document.getElementById('hero-video');
-    var heroLogo = document.getElementById('hero-logo');
     var tertiaryVideo = document.getElementById('tertiary-video');
     var logoFrame = document.getElementById('logo-frame');
     var landingLinks = document.getElementById('landing-links');
